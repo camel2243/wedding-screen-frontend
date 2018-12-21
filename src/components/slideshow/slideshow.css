@@ -31,11 +31,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 1;
-    -webkit-filter: opacity(1);
-    -moz-filter: opacity(1);
-    -o-filter: opacity(1);
-    -ms-filter: opacity(1);
-    filter: opacity(1);
+    -webkit-filter: opacity(0);
+    -moz-filter: opacity(0);
+    -o-filter: opacity(0);
+    -ms-filter: opacity(0);
+    filter: opacity(0);
 }
 
 @media (max-width: 480px) {
