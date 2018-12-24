@@ -13,7 +13,7 @@ const ORDER = [
 function Option(props) {
   const { order, text, isSelect, isAnswer, onClick, disabled, showAnswer } = props;
   return (
-    <div className={`${ORDER[order]} ${isSelect ? styles.selected2 : ''} ${disabled ? 'disabled' : ''}`}
+    <div className={`${ORDER[order]} ${isSelect ? styles.selected2 : ''} ${showAnswer && !isAnswer ? styles.disabled : ''} ${showAnswer && isAnswer ? '' : 'disabled'}`}
       style={{ cursor: 'pointer', flex: 1, margin: '5px', display: 'flex', alignItems: 'center', justifyContent: 'center', whiteSpace: 'initial' }}
       disabled={disabled}
       onClick={onClick}>
@@ -87,7 +87,7 @@ function Overlay(props) {
   const { stage } = props;
   if (stage === GameStage.START_QUESTION || stage === GameStage.REVEAL_ANSWER) {
     return (
-      <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 999999, background: '#FFFFF' }}>
+      <div style={{ width: '100%', top: '-50px', position: 'relative', top: 0, left: 0, zIndex: 999999, background: '#FFFFF' }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
           {stage === GameStage.START_QUESTION ? <Ready /> : <h3>Time's up!!</h3>}
         </div>

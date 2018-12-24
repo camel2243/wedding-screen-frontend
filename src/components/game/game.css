@@ -18,6 +18,10 @@
     justify-content: center;
 }
 
+.disabled {
+    opacity: .15 !important;
+}
+
 @media (min-width: 48em) {
     .optionBlock {
         display: flex;
